@@ -1,9 +1,14 @@
-var cognomi = ["Bianchi", "Rossi", "Perlari", "Lodigiani", "Mastrobattista", "Verdi"]
-cognomi.sort();
-console.log(cognomi);
-
 var domanda = prompt("Inserisci il tuo cognome");
+domanda = domanda[0].toUpperCase() + domanda.substring(1)
 console.log(domanda);
-cognomi.push (domanda)
-console.log(cognomi);
-cognomi.sort();
+
+var cognomi = ["Bianchi", "Rossi", "Perlari", "Lodigiani", "Mastrobattista", "Verdi"]
+cognomi.push(domanda);
+console.log(cognomi.sort());
+
+i = 0;
+
+while (i < cognomi.length) {
+  document.getElementById('lista').innerHTML += "<li>" + cognomi[i] + "</li>";
+  i++;
+}
